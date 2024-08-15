@@ -12,16 +12,18 @@ function reverse(texto) {
 function toUpperCase(texto) {
     return texto.toUpperCase();
 }
+function toLowerCase(texto) {
+    return texto.toLowerCase();
+}
 
-// Adicione outras funções aqui...
 
 const functions = {
     'reverse': reverse,
     'toUpperCase': toUpperCase,
-    // Adicione outras funções aqui...
+    'toLowerCase': toLowerCase
 };
 
-rl.question('Digite a função que deseja usar (reverse, toUpperCase, etc.): ', (funcName) => {
+rl.question('Digite a função que deseja usar (reverse, toUpperCase, toLowerCase.): ', (funcName) => {
     if (functions[funcName]) {
         rl.question('Digite o texto: ', (input) => {
             console.log(`Resultado: ${functions[funcName](input)}`);
