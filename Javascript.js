@@ -12,42 +12,40 @@ function reverse(texto) {
 function toUpperCase(texto) {
     return texto.toUpperCase();
 }
+
 function toLowerCase(texto) {
-    return texto.toLowerCase()
+    return texto.toLowerCase();
 }
 
+function IMC(peso, altura) {
+    return (peso / (altura * altura)).toFixed(2);
+}
 
 const functions = {
     'reverse': reverse,
     'toUpperCase': toUpperCase,
-    'toLowerCase': toLowerCase
+    'toLowerCase': toLowerCase,
+    'IMC': IMC
 };
 
-rl.question('Digite a função que deseja usar (reverse, toUpperCase, toLowerCase.): ', (funcName) => {
+rl.question('Digite a função que deseja usar (reverse, toUpperCase, toLowerCase, IMC): ', (funcName) => {
     if (functions[funcName]) {
-        rl.question('Digite o texto: ', (input) => {
-            console.log(`Resultado: ${functions[funcName](input)}`);
-            rl.close();
-        });
+        if (funcName === 'IMC') {
+            rl.question('Digite o peso (em kg): ', (peso) => {
+                rl.question('Digite a altura (em metros): ', (altura) => {
+                    const imcResult = functions[funcName](parseFloat(peso), parseFloat(altura));
+                    console.log(`IMC: ${imcResult}`);
+                    rl.close();
+                });
+            });
+        } else {
+            rl.question('Digite o texto: ', (input) => {
+                console.log(`Resultado: ${functions[funcName](input)}`);
+                rl.close();
+            });
+        }
     } else {
         console.log('Função não reconhecida.');
         rl.close();
     }
 });
-
-
-// const readline = require('readline');
-
-// const rl = readline.createInterface({
-//     input: process.stdin,
-//     output: process.stdout
-// })
-// //reverso
-// function reverse(texto) {
-//     return texto.split("").reverse().join("");
-// }
-
-// rl.question('Digite a palavra que você deseja inverter: ', (input) => {
-//     console.log(`Palavra invertida: ${reverse(input)}`);
-//     rl.close();
-// });
