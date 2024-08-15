@@ -13,7 +13,7 @@ function toUpperCase(texto) {
     return texto.toUpperCase();
 }
 function toLowerCase(texto) {
-    return texto.toLowerCase();
+    return texto.toLowerCase()
 }
 
 
