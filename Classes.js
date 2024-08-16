@@ -5,7 +5,7 @@ class Carro {
         this.ano = ano;
         this.marca = marca;
         this.cor = cor;
-        this.tamanho = tamanho; // Adicionando a propriedade tamanho
+        this.tamanho = tamanho;
     }
 
     ligar() {
@@ -15,7 +15,7 @@ class Carro {
 
 class Motor {
     constructor(cilindros, potencia) {
-        this.cilindros = cilindros;
+        this.cilindros = cilindros
         this.potencia = potencia;
     }
 
@@ -24,14 +24,10 @@ class Motor {
     }
 }
 
-// Criando uma instância da classe Motor
 const m1 = new Motor(4, '100cv');
 
-// Chamando o método ligar na instância do motor
 m1.ligar();
 
-// Criando uma instância da classe Carro
-const carro1 = new Carro(2021, 'Uno', 'azul', 'compacto');
+const carro1 = new Carro('2010', 'Uno', 'azul', 'pequeno');
 
-// Chamando o método ligar na instância do carro
 carro1.ligar();

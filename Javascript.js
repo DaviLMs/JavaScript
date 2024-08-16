@@ -33,8 +33,18 @@ rl.question('Digite a função que deseja usar (reverse, toUpperCase, toLowerCas
         if (funcName === 'IMC') {
             rl.question('Digite o peso (em kg): ', (peso) => {
                 rl.question('Digite a altura (em metros): ', (altura) => {
-                    const imcResult = functions[funcName](parseFloat(peso), parseFloat(altura));
+                    const imcResult = functions[funcName](
+                        (peso), parseFloat(altura));
                     console.log(`IMC: ${imcResult}`);
+                    if (imcResult < 18.5) {
+                        console.log('Abaixo do peso');
+                    } else if (imcResult >= 18.5 && imcResult <= 24.9) {
+                        console.log('Peso normal');
+                    } else if (imcResult >= 25 && imcResult <= 29.9) {
+                        console.log('Acima do peso');
+                    } else if (imcResult >= 30) {
+                        console.log('Obeso')
+                    }
                     rl.close();
                 });
             });
