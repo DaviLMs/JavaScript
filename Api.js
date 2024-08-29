@@ -57,3 +57,21 @@ async function Comentrios() {
 
 // Chama a função Comentrios para executar o processo de obtenção de comentários
 Comentrios();
+
+fetch('https://dummyjson.com/carts/add', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+        userId: 1,
+        products: [
+            {
+                id: 144,
+                quantity: 4,
+            },
+            {
+                id: 98,
+                quantity: 1,
+            },
+        ]
+    })
+})

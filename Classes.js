@@ -41,4 +41,8 @@ m1.ligar();
 const carro1 = new Carro('2010', 'Uno', 'azul', 'pequeno'); // Carro ano 2010, marca Uno, cor azul e tamanho pequeno
 
 // Liga o carro e exibe a mensagem
-carro1.ligar(); 
+carro1.ligar();
+
+fetch('https://dummyjson.com/http/404/Hello_Peter')
+    .then(res => res.json())
+    .then(console.log);
