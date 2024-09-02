@@ -13,7 +13,7 @@ router.get('/buscar', async (req, res) => {
 
         res.status(200).json({
             status: 200,
-            message: `Pessoa encontrada com sucesso`
+            message: `Todas as Pessoas encontrada com sucesso`
         })
     } catch (error) {
         res.status(500).json({
