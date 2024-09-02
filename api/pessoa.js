@@ -7,13 +7,13 @@ router.get('/buscar', async (req, res) => {
     let fetch = (await import('node-fetch')).default
 
     try {
-        fetch('https://dummyjson.com/products')
+        fetch('https://dummyjson.com/users')
             .then(res => res.json())
             .then(console.log);
 
         res.status(200).json({
             status: 200,
-            message: 'Pessoa encontrada'
+            message: `Pessoa encontrada com sucesso`
         })
     } catch (error) {
         res.status(500).json({
