@@ -6,10 +6,10 @@ const port = 5000;
 app.use(express.json());
 
 const pessoa = require('./api/pessoa'); // Importa o arquivo 'pessoa.js'
-// const documento = require('./api/documento');
+const documento = require('./api/documento');
 
 app.use("/api/pessoa", pessoa);
-// app.use("/api/documento", documento);
+app.use("/api/documento", documento);
 
 
 app.listen(port, () => {

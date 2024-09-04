@@ -1,5 +1,4 @@
 const express = require('express');
-
 const router = express.Router();
 
 router.get('/buscar', async (req, res) => {
@@ -10,7 +9,6 @@ router.get('/buscar', async (req, res) => {
         fetch('https://dummyjson.com/users')
             .then(res => res.json())
             .then(console.log);
-
         res.status(200).json({
             status: 200,
             message: `Todas as Pessoas encontrada com sucesso`
